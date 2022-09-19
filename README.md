@@ -106,20 +106,19 @@ Is there a correlation between square footage of a home and log error?
 # Hypothesis 2
 Is there a relationship between tax value and log error?
 
-## $H_0$: Tax Value is independent of the Number of Bedrooms of a home has
+## $H_0$: Tax Value is independent of the Number of the log error of a property 
 
-## $H_a$ : Tax Value is dependent of Number of Bedrooms of a home has
+## $H_a$ : Tax Value is dependent of Number of the log error of a property 
 
 ---
 # Hypothesis 3
-Log error is significantly different among the counties of LA County, Orange County and Ventura County?
-Does log error vary by when the house was sold?
+Log error is different among the counties of LA County, Orange County and Ventura County?
 
-## $H_0$: Tax Value is independent of the Number of Bathrooms a home has
+## $H_0$:  There is no significant difference in logerror for properties in LA County vs Orange County vs Ventura County
 
-## $H_a$ : Tax Value is dependent of Number of Bathrooms of a home has
+## $H_a$ :  Log error is significantly different among the counties of LA County, Orange County and Ventura County.
 ---
-# Hypothesis 3
+# Hypothesis 4
 Does log error vary by when the house was sold?
 
 ## $H_0$: Tax Value is independent of the Number of Bathrooms a home has
@@ -127,9 +126,7 @@ Does log error vary by when the house was sold?
 ## $H_a$ : Tax Value is dependent of Number of Bathrooms of a home has
 ---
 ### Target variable
-number_services
-monthly_avg
-monthly_charges
+Log Error
 
 ### Need to haves (Deliverables):
 acquire.py
@@ -139,7 +136,7 @@ this readme.md
 
 
 ### Nice to haves (With more time):
-#### Functions to so no code is shown 
+
 
 
 
