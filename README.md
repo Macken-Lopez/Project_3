@@ -44,7 +44,7 @@ Is there a correlation between square footage of a home and log error?
 
 Is there a relationship between tax value and log error?
 
-Log error is significantly different among the counties of LA County, Orange County and Ventura County?
+Is Log error is significantly different among the counties of LA County, Orange County and Ventura County?
 
 Does log error vary by when the house was sold?
 
