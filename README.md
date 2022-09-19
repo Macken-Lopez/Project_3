@@ -162,35 +162,16 @@ this readme.md
 ---
 | Attribute | Definition | Data Type |
 | ----- | ----- | ----- |
-|area|                                    |float64|
-|assessmentyear|                          |float64|
-|bathdividesarea|                         |float64|
-|bathdividesbed|                          |float64|
-|bathplusbathdividesarea|                 |float64|
-|bathroomcnt|                             |float64|
-|bed|+bath*area                           |float64|
-|bedbath_harmean|*area                    |float64|
-|beddivdesbath|                           |float64|
-|bedroomcnt|                              |float64|
-|calculatedbathnbr|                       |float64|
-|county|                                   |object|
-|decade|                                    |int64|
-|fips|                                      |int64|
-|fullbathcnt|                             |float64|
-|id|                                        |int64|
-|latitude|                                |float64|
-|logerror|                                |float64|
-|longitude|                               |float64|
-|lotsizesquarefeet|                       |float64|
-|lotsizesquarefeet_wo_outliers|           |float64|
-|roomcnt|                                 |float64|
-|sqrt(bed^2+bath^2)*area|                 |float64|
-|taxvaluedollarcnt|                       |float64|
-|transaction_month|                        |object|
-|transaction_month_int|                     |int64|
-|transactiondate|                  |datetime64[ns]|
-|transactiondate_in_days|                   |int64|
-|yearbuilt|                               |float64|
+|area|Area of the property in square feet|float64|
+|assessmentyear|Year the taxes were assessed on the property|float64|
+|bathroomct|Count of Bathrooms for the property|float64|
+|bedroomcnt|Count of Bedrooms for the property|float64|
+|county|County the property is in |object|
+|fips|Federal Information Processing Standard code|int64|
+|latitude|Latitude of the middle of the parcel divided by 10e6|float64|
+|logerror|The log difference between Zillow's Zestimate and the property sale price|float64|
+|longitude|Longitude of the middle of the parcel divided by 10e6|float64|
+|yearbuilt|The Year the Property was Built|float64|
 | ----- | ----- | ----- |
 ***
 [[Back to top](#top)]
@@ -223,31 +204,53 @@ Repeat until you get something you understand.
 [[Back to top](#top)]
 
 
-### Stats Test 1: Chi2:
+# Stats Test 1
 
-#### Hypothesis 1:
-# $H_0$: Tax Value is independent of the Sqft of a home 
+# Hypothesis 1
+## Is there a correlation between square footage of a home and log error?
 
-## $H_a$ : Tax Value is dependent of the Sqft of a home 
+
+## $H_0$: Square footage is independent of the log error of a property 
+
+## $H_a$ : Square footage  is dependent of the log error of a property 
 
 #### Alpha value:
 
 - alpha = 1 - confidence, therefore alpha is 0.05
 
+#### Results:
+We reject the null hypothesis.
+
+#### Summary:
+
+***
+----------
+# Stats Test 2: 
+
+# Hypothesis 2
+##Is there a relationship between tax value and log error?
+
+## $H_0$: Tax Value is independent of the Number of the log error of a property 
+
+## $H_a$ : Tax Value is dependent of Number of the log error of a property 
 
 #### Results:
 We reject the null hypothesis.
+
 
 #### Summary:
 While I still do not fully grasp this process it was completed
 ***
-### Stats Test 2: Chi2
+----------
+# Stats Test 3: 
 
+# Hypothesis 3
+Log error is different among the counties of LA County, Orange County and Ventura County?
 
-#### Hypothesis 2:
-## $H_0$: Tax Value is independent of the Number of Bedrooms of a home has
+## $H_0$:  There is no significant difference in logerror for properties in LA County vs Orange County vs Ventura County
 
-## $H_a$ : Tax Value is dependent of Number of Bedrooms of a home has
+## $H_a$ :  Log error is significantly different among the counties of LA County, Orange County and Ventura County.
+
 #### Alpha value:
 - alpha = 1 - confidence, therefore alpha is 0.05
 
@@ -258,10 +261,14 @@ We reject the null hypothesis.
 #### Summary:
 While I still do not fully grasp this process it was completed
 
-### Stats Test 3: Chi2
+***
+----------
+# Stats Test 4: 
 
-#### Hypothesis 3:
-# $H_0$: Tax Value is independent of the Number of Bathrooms a home has
+# Hypothesis 4
+Does log error vary by when the house was sold?
+
+## $H_0$: Tax Value is independent of the Number of Bathrooms a home has
 
 ## $H_a$ : Tax Value is dependent of Number of Bathrooms of a home has
 
@@ -274,8 +281,8 @@ We reject the null hypothesis.
 
 #### Summary:
 While I still do not fully grasp this process it was completed
-
-
+***
+----------
 ## <a name="model"></a>Modeling:
 [[Back to top](#top)]
 
